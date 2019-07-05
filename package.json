@@ -12,11 +12,18 @@
         "test": "ava"
     },
     "dependencies": {
-        "markdown-it": "^8.4.2"
+        "markdown-it": "^8.4.2",
+        "vue": "^2.6.10"
     },
     "devDependencies": {
+        "@babel/core": "^7.5.0",
         "@vue/test-utils": "^1.0.0-beta.29",
-        "ava": "^1.4.1"
+        "ava": "^2.1.0",
+        "browser-env": "^3.2.6",
+        "require-extension-hooks": "^0.3.3",
+        "require-extension-hooks-babel": "^1.0.0",
+        "require-extension-hooks-vue": "^3.0.0",
+        "vue-template-compiler": "^2.6.10"
     },
     "ava": {
         "require": [
