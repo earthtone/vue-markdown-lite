@@ -1,5 +1,7 @@
 # Vue Markdown Lite
 
+![Travis CI Status](https://travis-ci.org/earthtone/vue-markdown-lite.svg?branch=master)
+
 A Lightweight [markdown-it](https://github.com/markdown-it/markdown-it) wrapper for Vue, inspired by [vue-markdown](https://github.com/miaolz123/vue-markdown).
 
 ## Installation
