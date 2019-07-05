@@ -1,6 +1,6 @@
 import component from './vue-markdown-lite.vue'
 
-export function install (Vue) {
+function install (Vue) {
   if (install.installed) {
     return
   }
@@ -21,4 +21,5 @@ if (GlobalVue) {
   GlobalVue.use({ install })
 }
 
+component.install = install
 export default component
