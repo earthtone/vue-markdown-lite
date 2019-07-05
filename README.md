@@ -9,13 +9,13 @@ A Lightweight [markdown-it](https://github.com/markdown-it/markdown-it) wrapper 
 ### NPM
 
 ```sh
-$ npm install --save vue-markdown-lite
+$ npm install --save @earthtone/vue-markdown-lite
 ```
 
-### CommonJS
+### CommonJS Module
 
 ```js
-var VueMarkdownLite = require('vue-markdown-lite');
+var VueMarkdownLite = require('@earthtone/vue-markdown-lite');
 
 new Vue({
   components: {
@@ -24,15 +24,29 @@ new Vue({
 })
 ```
 
-### ES Modules
+### ES Module
 
 ```js
-import VueMarkdownLite from 'vue-markdown-lite'
+import VueMarkdownLite from '@earthtone/vue-markdown-lite'
 
 new Vue({
   components: {
     VueMarkdownLite
   }
+})
+```
+
+### Globally Registered Component
+
+```js
+import VueMarkdownLite from '@earthtone/vue-markdown-lite'
+import App from './App.vue'
+
+Vue.use(VueMarkdwonLite)
+
+new Vue({
+  el: '#app',
+  render: h => h(App)
 })
 ```
 
