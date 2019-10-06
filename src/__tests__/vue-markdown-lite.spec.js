@@ -1,14 +1,14 @@
 import test from 'ava'
 import { shallowMount } from '@vue/test-utils'
 import MarkdownLite from '../vue-markdown-lite.vue'
-import headers from 'markdown-it-named-headers'
+import headers from 'markdown-it-named-headings'
 import containers from 'markdown-it-container'
 
 test('renders expected', assert => {
   const wrapper = shallowMount(MarkdownLite, {
     propsData: {
       plugins: [
-        [headers, { slugify: string => string.toLowerCase().replace(/\s/g, '-').replace(/(\.|\?|!)/g, '') }],
+        [headers],
         [containers, 'warning']
       ]
     },
