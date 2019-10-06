@@ -1,6 +1,6 @@
 {
     "name": "@earthtone/vue-markdown-lite",
-    "version": "0.1.4",
+    "version": "0.2.0",
     "description": "Light weight Markdownit Wrapper Vue Component",
     "main": "dist/vue-markdown-lite.umd.js",
     "module": "dist/vue-markdown-lite.esm.js",
