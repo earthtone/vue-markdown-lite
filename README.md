@@ -114,7 +114,7 @@ By default, the `vue-markdown-lite` component implements the most limited use ca
 The expected prop type is an `Array` of `Array`s, containing a reference to the imported plugin module, and any options or arguments the plugin takes.
 
 ```html
-<vue-markdown-lite :plugins="computedPluginsList">
+<vue-markdown-lite :plugins="mdPlugins">
   # Foo Bar
 
   ::: warning
@@ -124,15 +124,15 @@ The expected prop type is an `Array` of `Array`s, containing a reference to the 
 ```
 
 ```js
-import namedHeaders from 'markdown-it-named-headers'
+import namedHeaders from 'markdown-it-named-headings'
 import customContainers from 'markdown-it-container'
 
 export default {
   name: 'parent-component',
-  computed: {
-    computedPluginsList () {
-      return [
-        [ namedHeaders, { slugify: string => string.toLowerCase().replace(/\s*/, '-') ],
+  data () {
+    return {
+      mdPlugins: [
+        [ namedHeaders ],
         [ customContainers, 'warning' ]
       ]
     }
