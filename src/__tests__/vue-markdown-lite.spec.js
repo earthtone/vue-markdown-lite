@@ -1,9 +1,17 @@
 import test from 'ava'
 import { shallowMount } from '@vue/test-utils'
 import MarkdownLite from '../vue-markdown-lite.vue'
+import headers from 'markdown-it-named-headers'
+import containers from 'markdown-it-container'
 
 test('renders expected', assert => {
   const wrapper = shallowMount(MarkdownLite, {
+    propsData: {
+      plugins: [
+        [headers, { slugify: string => string.toLowerCase().replace(/\s/g, '-').replace(/(\.|\?|!)/g, '') }],
+        [containers, 'warning']
+      ]
+    },
     slots: {
       default: `
 # Wassup World!!!
@@ -18,6 +26,11 @@ test('renders expected', assert => {
 [google](http://google.com)
 
 You destroyed me. And better causes to die for. A row of cabbages! Watchmaker's Daughter: The door was open. Number Two's Assistant: There are methods we haven't used yet, of course. No. Nor of being reduced. You're still as pompous as ever... Danvers.
+
+::: warning
+*here be dragons*
+:::
+
       `
     }
   })

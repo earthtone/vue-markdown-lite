@@ -79,14 +79,14 @@ Stick some markdown in the between the opening/closing `vue-markdown-lite` brack
 
 ## This is some generic markdown
 
-- this 
+- this
 - is a
 - list
 - of a
 - few
 - items
 
-> This is a quotation, which is a noun, but not a quote, which is a verb. 
+> This is a quotation, which is a noun, but not a quote, which is a verb.
 
 ![image alt](/path/to/image.png)
 
@@ -106,3 +106,47 @@ After setting up the middleware in your vue component above, using the embedded 
 VueMarkdownLite has a default slot which is used to write the `markdown` source. The default slot only renders **once** at the beginning, and it will overwrite the prop of `source`!
 
 [Read more about Slots in Vue](https://vuejs.org/v2/guide/components-slots.html)
+
+### Plugins
+
+By default, the `vue-markdown-lite` component implements the most limited use case with no additional feature support. It does support loading optional `markdown-it` [plugins](https://www.npmjs.org/browse/keyword/markdown-it-plugin) as component props.
+
+The expected prop type is an `Array` of `Array`s, containing a reference to the imported plugin module, and any options or arguments the plugin takes.
+
+```html
+<vue-markdown-lite :plugins="computedPluginsList">
+  # Foo Bar
+
+  ::: warning
+  * here be dragons *
+  :::
+</vue-markdown-lite>
+```
+
+```js
+import namedHeaders from 'markdown-it-named-headers'
+import customContainers from 'markdown-it-container'
+
+export default {
+  name: 'parent-component',
+  computed: {
+    computedPluginsList () {
+      return [
+        [ namedHeaders, { slugify: string => string.toLowerCase().replace(/\s*/, '-') ],
+        [ customContainers, 'warning' ]
+      ]
+    }
+  }
+}
+```
+
+The above template and script blocks will yield the following output:
+
+```html
+<article>
+  <h1 id="foo-bar">Foo Bar</h1>
+  <div class="warning">
+    <p><em>here be dragons</em></p>
+  </div>
+</article>
+```
