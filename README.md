@@ -109,9 +109,9 @@ VueMarkdownLite has a default slot which is used to write the `markdown` source.
 
 ### Plugins
 
-By default, the `vue-markdown-lite` component implements the most limited use case with no additional feature support. However the component does support loading optional `markdown-it` [plugins](https://www.npmjs.org/browse/keyword/markdown-it-plugin) as component props.
+By default, the `vue-markdown-lite` component implements the most limited use case with no additional feature support. It does support loading optional `markdown-it` [plugins](https://www.npmjs.org/browse/keyword/markdown-it-plugin) as component props.
 
-The expected prop type is an `Array` of `Array`s, containing a reference to the imported plugin module, and plugin options takes respectively.
+The expected prop type is an `Array` of `Array`s, containing a reference to the imported plugin module, and any options or arguments the plugin takes.
 
 ```html
 <vue-markdown-lite :plugins="computedPluginsList">

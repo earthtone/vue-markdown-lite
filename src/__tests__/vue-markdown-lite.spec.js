@@ -8,7 +8,7 @@ test('renders expected', assert => {
   const wrapper = shallowMount(MarkdownLite, {
     propsData: {
       plugins: [
-        [headers, { slugify: string => string.toLowerCase().replace(/\s/g, '-').replace(/(\.|\?|\!)/g, '') }],
+        [headers, { slugify: string => string.toLowerCase().replace(/\s/g, '-').replace(/(\.|\?|!)/g, '') }],
         [containers, 'warning']
       ]
     },
