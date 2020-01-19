@@ -10,6 +10,7 @@ before_deploy:
   - npm run build
 
 deploy:
+  edge: true
   provider: npm
   email: "$NPM_EMAIL"
   api_token: "$NPM_API_TOKEN"
