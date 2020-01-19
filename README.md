@@ -12,30 +12,6 @@ A Lightweight [markdown-it](https://github.com/markdown-it/markdown-it) wrapper 
 $ npm install --save @earthtone/vue-markdown-lite
 ```
 
-### CommonJS Module
-
-```js
-var VueMarkdownLite = require('@earthtone/vue-markdown-lite');
-
-new Vue({
-  components: {
-    'vue-markdown-lite': VueMarkdownLite
-  }
-})
-```
-
-### ES Module
-
-```js
-import VueMarkdownLite from '@earthtone/vue-markdown-lite'
-
-new Vue({
-  components: {
-    VueMarkdownLite
-  }
-})
-```
-
 ### Globally Registered Component
 
 ```js
@@ -48,6 +24,20 @@ new Vue({
   el: '#app',
   render: h => h(App)
 })
+```
+
+Both ESModules and CommonJS syntax are supported for importing.
+
+#### CommonJS
+
+```js
+const VueMarkdownLite = require('@earthtone/vue-markdown-lite')
+```
+
+#### ESModule
+
+```js
+import VueMarkdownLite from '@earthtone/vue-markdown-lite'
 ```
 
 ### Browser globals
@@ -67,6 +57,29 @@ new Vue({
     });
   </script>
 ```
+
+### Single File Component
+
+Single File Components (`SFC`s) are also importable for use in individual components as described in [this guide](https://vuejs.org/v2/cookbook/packaging-sfc-for-npm.html).
+
+```html
+<template>
+  <vue-markdown-lite>
+    # Hey You Guys!
+  </vue-markdown-lite>
+</template>
+
+<script>
+  import VueMarkdownLite from '@earthtone/vue-markdown-lite/sfc'
+  export default {
+    components: {
+      VueMarkdownLite
+    }
+  }
+</script>
+```
+
+
 
 ## Usage
 
